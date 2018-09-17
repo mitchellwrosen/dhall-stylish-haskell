@@ -1,0 +1,4 @@
+< compact      : {}
+| compact-line : {}
+| vertical     : {}
+>
