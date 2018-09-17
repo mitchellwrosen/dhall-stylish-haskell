@@ -1,4 +1,4 @@
 { align            : Bool
 , remove-redundant : Bool
-, style            : ./style.dhall
+, style            : ./Style.dhall
 }

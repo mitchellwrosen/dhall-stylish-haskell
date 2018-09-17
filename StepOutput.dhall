@@ -3,7 +3,7 @@
         { align            : Text
         , empty_list_align : Text
         , list_align       : Text
-        , list_padding     : ./list-padding.dhall
+        , list_padding     : ./ListPadding.dhall
         , long_list_align  : Text
         , pad_module_names : Bool
         , separate_lists   : Bool

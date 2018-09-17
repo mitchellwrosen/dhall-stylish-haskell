@@ -1,11 +1,12 @@
-   let align            = constructors ./align.dhall
-in let empty-list-align = constructors ./empty-list-align.dhall
-in let list-align       = constructors ./list-align.dhall
-in let list-padding     = constructors ./list-padding.dhall
-in let long-list-align  = constructors ./long-list-align.dhall
-in let newline          = constructors ./newline.dhall
-in let step             = constructors ./step.dhall
-in let style            = constructors ./style.dhall
+   let align            = constructors ./Align.dhall
+in let empty-list-align = constructors ./EmptyListAlign.dhall
+in let extension        = constructors ./Extension.dhall
+in let list-align       = constructors ./ListAlign.dhall
+in let list-padding     = constructors ./ListPadding.dhall
+in let long-list-align  = constructors ./LongListAlign.dhall
+in let newline          = constructors ./Newline.dhall
+in let step             = constructors ./Step.dhall
+in let style            = constructors ./Style.dhall
 in
 
 { align =
@@ -20,12 +21,15 @@ in
     , right-after = empty-list-align.right-after {=}
     }
 
+, extension =
+    extension
+
 , imports =
-    \(imports : ./imports.dhall) ->
+    \(imports : ./Imports.dhall) ->
       step.imports imports
 
 , language-pragmas =
-    \(language-pragmas : ./language-pragmas.dhall) ->
+    \(language-pragmas : ./LanguagePragmas.dhall) ->
       step.language-pragmas language-pragmas
 
 , list-align =
@@ -52,8 +56,11 @@ in
     , native = newline.native {=}
     }
 
+, render =
+    ./render.dhall
+
 , simple-align =
-    \(simple-align : ./simple-align.dhall) ->
+    \(simple-align : ./SimpleAlign.dhall) ->
       step.simple-align simple-align
 
 , style =
